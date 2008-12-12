@@ -14,6 +14,12 @@ from Products.CMFCore.permissions import setDefaultRoles
 
 videoMessageFactory = MessageFactory('cs.video')
 
+from Products.CMFCore.DirectoryView import registerDirectory
+from config import GLOBALS
+
+registerDirectory('skins', GLOBALS)
+
+
 def initialize(context):
     """Initializer called when used as a Zope 2 product.
 
