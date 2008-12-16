@@ -35,7 +35,8 @@ VideoSchema = schemata.ATContentTypeSchema.copy() + atapi.Schema((
                              'listing' :  (16, 16),
                              },
                      widget=atapi.ImageWidget(label=_(u'Image'),
-                     validators = (('isNonEmptyFile', V_REQUIRED),),
+                                              validators = (('isNonEmptyFile', V_REQUIRED),),
+                                              ),
                      ),
 
 
@@ -57,10 +58,11 @@ class Video(base.ATCTContent):
     portal_type = "Video"
     schema = VideoSchema
 
+    """
     title = atapi.ATFieldProperty('title')
     description = atapi.ATFieldProperty('description')
     url = atapi.ATFieldProperty('url')
-
+    """
     def tag(self, **kwargs):
         """Generate image tag using the api of the ImageField
         """
