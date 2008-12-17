@@ -4,7 +4,11 @@ Changelog
 1.1
 ----------------
 
+* Added CSS file with code to have archive views correctly shown
+  [erral]
+
 * Plone3 compatibility with fieldproperties
+  [erral]
 
 * Added uninstall code
   [erral]
