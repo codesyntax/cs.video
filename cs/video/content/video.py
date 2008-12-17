@@ -9,7 +9,7 @@ from Products.ATContentTypes.content import schemata
 
 from cs.video import videoMessageFactory as _
 from cs.video.interfaces import IVideo
-from cs.video.config import PROJECTNAME
+from cs.video.config import PROJECTNAME, IS_PLONE3
 
 from Products.validation import V_REQUIRED
 
@@ -58,11 +58,11 @@ class Video(base.ATCTContent):
     portal_type = "Video"
     schema = VideoSchema
 
-    """
-    title = atapi.ATFieldProperty('title')
-    description = atapi.ATFieldProperty('description')
-    url = atapi.ATFieldProperty('url')
-    """
+    if IS_PLONE3:
+        title = atapi.ATFieldProperty('title')
+        description = atapi.ATFieldProperty('description')
+        url = atapi.ATFieldProperty('url')
+
     def tag(self, **kwargs):
         """Generate image tag using the api of the ImageField
         """
