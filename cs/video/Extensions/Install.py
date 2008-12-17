@@ -30,3 +30,20 @@ def install(self):
 
     return out.getvalue()
     
+def uninstall(self):
+    out = StringIO()
+    uninstall_subskin(self, out, 'video_templates')       
+    return out.getvalue()
+
+
+def uninstall_subskin(self, out, skinlayer):
+    skinstool=getToolByName(self, 'portal_skins')
+    for skinName in skinstool.getSkinSelections():
+        path = skinstool.getSkinPath(skinName)
+        layers_list = [i.strip() for i in  path.split(',')]
+        if skinlayer in layers_list:
+            layers_list.remove(skinlayer)
+        else:
+            print "Warning: '"+skinlayer+"' layer already removed from '"+skinName+"' skin"
+        path = ','.join(layers_list)
+        skinstool.addSkinSelection(skinName, path)
