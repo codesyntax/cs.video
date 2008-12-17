@@ -34,7 +34,6 @@
             
             <tal:block define="last_video last_videos/last_video"
                        condition="last_video">
-              <metal:one use-macro="here/all_videos/macros/one-video" />
               
               <h2 tal:content="bideo_obj/Title">
                 Title or id
@@ -45,6 +44,8 @@
                  tal:content="bideo_obj/Description">
                 Description
               </p>
+
+              <metal:one use-macro="here/all_videos/macros/one-video" />
              
             </tal:block>
           </div>
