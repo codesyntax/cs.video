@@ -1,6 +1,15 @@
 Changelog
 =========
 
+1.1
+----------------
+
+* Added uninstall code
+  [erral]
+
+* Added video archive view
+  [erral]
+
 1.0
 ----------------
 
