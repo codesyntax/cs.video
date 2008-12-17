@@ -5,5 +5,13 @@
 
 
     <!-- -*- extra stuff goes here -*- -->
+    <browser:page
+      for="*"
+      name="last_videos"
+      class=".videos.LastVideos"
+      permission="zope2.View"
+      />
+
+
 
 </configure>
