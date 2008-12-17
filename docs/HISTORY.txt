@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.2
+-----------
+
+* Added eu, es and en translations
+  [erral]
+
 1.1
 ----------------
 
