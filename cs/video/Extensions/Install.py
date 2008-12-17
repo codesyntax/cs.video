@@ -7,13 +7,13 @@ from Products.CMFPlone.utils import getFSVersionTuple
 
 from cs.video.config import GLOBALS
 
-def install(self):
+def install(self, reinstall=False):
     out = StringIO()
 
     tool=getToolByName(self, "portal_setup")
 
-
-    install_subskin(self, out, GLOBALS, 'skins')
+    if not reinstall:
+        install_subskin(self, out, GLOBALS, 'skins')
 
     if getFSVersionTuple()[:3]>=(3,0,0):
         tool.runAllImportStepsFromProfile(

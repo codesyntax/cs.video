@@ -1,6 +1,13 @@
 Changelog
 =========
 
+1.4
+----------
+
+* Clean uninstall code
+  [erral]
+
+
 1.3
 ------------
 * Register locales directory
