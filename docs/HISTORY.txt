@@ -4,6 +4,8 @@ Changelog
 1.1
 ----------------
 
+* Plone3 compatibility with fieldproperties
+
 * Added uninstall code
   [erral]
 
