@@ -67,7 +67,7 @@
                         <a href=""
                            tal:attributes="href video_obj/absolute_url">
                           <img src="#"
-                               tal:replace="structure python:video_obj.tag(scale='thumb', css_class='bideo_img')" />
+                               tal:replace="structure python:video_obj.tag(scale='thumb', css_class='video-image')" />
                           <img src="#"
                                tal:define="img nocall:here/play.png"
                                tal:replace="structure python:img.tag(width=128, height=86, css_class='frame')" />
