@@ -10,4 +10,8 @@
   <!-- -*- extra stuff goes here -*- -->
   <object name="Video"
     meta_type="Factory-based Type Information with dynamic views" />
+  <object name="Folder"
+    meta_type="Factory-based Type Information with dynamic views" />
+  <object name="Large Plone Folder"
+    meta_type="Factory-based Type Information with dynamic views" />
 </object>
