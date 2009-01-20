@@ -2,6 +2,7 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:five="http://namespaces.zope.org/five"
+    xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="cs.video">
 
@@ -24,4 +25,54 @@
 
     <!-- -*- extra stuff goes here -*- -->
 
+    <!-- VideoFolder stuff -->
+    <include file="syndication.zcml" />
+    <class
+        class="Products.ATContentTypes.content.folder.ATFolder">
+      <implements interface=".interfaces.IPossibleVideoFolder" />
+    </class>
+    <class
+        class="Products.ATContentTypes.content.folder.ATBTreeFolder">
+      <implements interface=".interfaces.IPossibleVideoFolder" />
+    </class>
+
+
+    <browser:page
+        name="videofolderness"
+        for=".interfaces.IPossibleVideoFolder"
+        class=".activate.VideoFolderEnableness"
+        allowed_interface=".interfaces.IVideoFolderEnableness"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        name="videofolderize"
+        for=".interfaces.IPossibleVideoFolder"
+        class=".activate.VideoFolderHandler"
+        permission="cmf.ModifyPortalContent"
+        />
+        
+    <browser:menu
+        id="object_buttons"
+        title="Object menu"
+        />
+
+    <browser:menuItem
+        menu="object_buttons"
+        for=".interfaces.IPossibleVideoFolder"
+        title="Activate VideoFolderness"
+        action="${object_url}/@@videofolderize"
+        filter="object/@@videofolderness/notisVideoFolder"
+        permission="cmf.ModifyPortalContent"
+        />
+    
+    <browser:menuItem
+        menu="object_buttons"
+        for=".interfaces.IPossibleVideoFolder"
+        title="Deactivate VideoFolderness"
+        action="${object_url}/@@videofolderize?deactivate=1"
+        filter="object/@@videofolderness/isVideoFolder"
+        permission="cmf.ModifyPortalContent"
+        />
+    
 </configure>

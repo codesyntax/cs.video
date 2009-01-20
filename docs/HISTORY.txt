@@ -1,5 +1,11 @@
 Changelog
 =========
+1.5
+---------
+
+* Added RSS feeds
+  [erral]
+
 
 1.4
 ----------
