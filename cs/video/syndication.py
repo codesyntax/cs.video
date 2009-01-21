@@ -24,6 +24,8 @@ class VideoFeedSource(BaseFeedSource):
               'sort_on': 'created',
               'sort_order': 'reverse',
               'path': '/'.join(self.context.getPhysicalPath())}
+        import pdb;pdb.set_trace()
+        
         brains = self.context.getFolderContents(contentFilter=cf, full_objects=True)
 
         if max_only:
@@ -46,6 +48,9 @@ class VideoFeedEntry(BaseFeedEntry):
         """See IFeedEntry
         """
         return IEnclosure(self.context)
+
+    def getEffectiveDate(self):
+        return self.context.created()
 
     def getBody(self):
         """See IFeedEntry
