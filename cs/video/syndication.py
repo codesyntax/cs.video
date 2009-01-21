@@ -17,9 +17,11 @@ class VideoFeedSource(BaseFeedSource):
     """ Adapter for VideoFolder to IFeedSource """
     implements(IFeedSource)
 
+    VIDEO_TYPES = ['Video']
+
     def getFeedEntries(self, max_only=True):
-        cf = {'portal_type': ['Video'],
-              'sort_on': 'effective',
+        cf = {'portal_type': self.VIDEO_TYPES,
+              'sort_on': 'created',
               'sort_order': 'reverse',
               'path': '/'.join(self.context.getPhysicalPath())}
         brains = self.context.getFolderContents(contentFilter=cf, full_objects=True)
