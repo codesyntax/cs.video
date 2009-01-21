@@ -24,7 +24,6 @@ class VideoFeedSource(BaseFeedSource):
               'sort_on': 'created',
               'sort_order': 'reverse',
               'path': '/'.join(self.context.getPhysicalPath())}
-        import pdb;pdb.set_trace()
         
         brains = self.context.getFolderContents(contentFilter=cf, full_objects=True)
 
