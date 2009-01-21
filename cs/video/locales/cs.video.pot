@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2008-12-17 11:01+0000\n"
+"POT-Creation-Date: 2009-01-21 11:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,8 +26,21 @@ msgstr ""
 msgid "URL"
 msgstr ""
 
+#: ./activate.py:19
+msgid "Video Folder activated"
+msgstr ""
+
+#: ./activate.py:22
+msgid "Video Folder deactivated"
+msgstr ""
+
 #. Default: "More videos..."
-#: ./skins/video_templates/all_videos.pt:55
+#: ./skins/video_templates/all_videos.pt:71
 msgid "label_more_videos"
+msgstr ""
+
+#. Default: "Video Feed"
+#: ./skins/video_templates/video_archive.pt:14
+msgid "label_video_feed"
 msgstr ""
 

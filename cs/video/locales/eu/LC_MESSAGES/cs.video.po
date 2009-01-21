@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2008-12-17 11:01+0000\n"
-"PO-Revision-Date: 2008-12-17 11:39+0100\n"
+"POT-Creation-Date: 2009-01-21 11:57+0000\n"
+"PO-Revision-Date: 2009-01-21 12:59+0100\n"
 "Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,8 +26,21 @@ msgstr "Kopiatu hemen fitxategiaren helbidea"
 msgid "URL"
 msgstr "URLa"
 
+#: ./activate.py:19
+msgid "Video Folder activated"
+msgstr "Bideo karpeta aktibatuta"
+
+#: ./activate.py:22
+msgid "Video Folder deactivated"
+msgstr "Bideo karpeta desaktibatuta"
+
 #. Default: "More videos..."
-#: ./skins/video_templates/all_videos.pt:55
+#: ./skins/video_templates/all_videos.pt:71
 msgid "label_more_videos"
 msgstr "Bideo gehiago..."
+
+#. Default: "Video Feed"
+#: ./skins/video_templates/video_archive.pt:14
+msgid "label_video_feed"
+msgstr "Bideoen XML jarioa"
 

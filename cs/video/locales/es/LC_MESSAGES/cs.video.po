@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2008-12-17 11:01+0000\n"
-"PO-Revision-Date: 2008-12-17 11:38+0100\n"
+"POT-Creation-Date: 2009-01-21 11:57+0000\n"
+"PO-Revision-Date: 2009-01-21 12:59+0100\n"
 "Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,14 +20,27 @@ msgstr "Imagen"
 
 #: ./content/video.py:23
 msgid "Paste here the URL fo the flash video"
-msgstr "Copie aquí la dirección del video"
+msgstr "Copie aquí la dirección del vídeo"
 
 #: ./content/video.py:22
 msgid "URL"
 msgstr "URL"
 
+#: ./activate.py:19
+msgid "Video Folder activated"
+msgstr "Activado el modo carpeta de vídeos"
+
+#: ./activate.py:22
+msgid "Video Folder deactivated"
+msgstr "Desactivado el modo carpeta de vídeos"
+
 #. Default: "More videos..."
-#: ./skins/video_templates/all_videos.pt:55
+#: ./skins/video_templates/all_videos.pt:71
 msgid "label_more_videos"
-msgstr "Más videos..."
+msgstr "Más vídeos..."
+
+#. Default: "Video Feed"
+#: ./skins/video_templates/video_archive.pt:14
+msgid "label_video_feed"
+msgstr "Feed de vídeos"
 
