@@ -1,5 +1,17 @@
 Changelog
 =========
+1.7
+---------
+
+* Fixes for RSS document action
+  [erral]
+
+1.6
+--------
+
+* mmmmmm?
+
+
 1.5
 ---------
 
