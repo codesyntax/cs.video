@@ -26,8 +26,10 @@
                          from_sections last_videos/from_sections;
                          rss_action python:{'category': 'document_actions', 'available': True, 'title': 'RSS feed of this listing', 'url': here.absolute_url() + '/atom.xml', 'name': 'RSS feed of this listing', 'visible': True, 'allowed': True, 'id': 'rss', 'permissions': ('View',)};
                          new_actions actions;
+                         dactions python:new_actions.get('document_actions', []);
                          isVideoFolder here/@@videofolderness/isVideoFolder;
-                         dummy python:isVideoFolder and new_actions['document_actions'].append(rss_action) or None;
+                         dummy python:isVideoFolder and dactions.append(rss_action) or None;
+                         dummy python:new_actions.update({'document_actions':dactions});
                          actions new_actions;
                          ">
 
