@@ -7,6 +7,17 @@
       i18n:domain="plone">
 
   <body>
+
+    <metal:block fill-slot="head_slot">
+      <tal:rss condition="here/@@videofolderness/isVideoFolder"
+               i18n:domain="cs.video">
+        <link rel="alternate" href="" title="Video Feed" type="application/atom+xml"
+              i18n:attributes="title label_video_feed"
+              tal:attributes="href string:${here/absolute_url}/atom.xml" />
+      </tal:rss>
+    </metal:block>
+
+
     <div metal:fill-slot="main">
       <metal:main-macro define-macro="main">
         <div class="videos"
@@ -14,7 +25,14 @@
                          last_video last_videos/last_video;
                          bideo_obj python:last_video and last_video[0] or None;
                          from_sections last_videos/from_sections;
-                         showmore python:False">
+                         showmore python:False;
+                         rss_action python:{'category': 'document_actions', 'available': True, 'title': 'RSS feed of this listing', 'url': here.absolute_url() + '/atom.xml', 'name': 'RSS feed of this listing', 'visible': True, 'allowed': True, 'id': 'rss', 'permissions': ('View',)};
+                         new_actions actions;
+                         isVideoFolder here/@@videofolderness/isVideoFolder;
+                         dummy python:isVideoFolder and new_actions['document_actions'].append(rss_action) or None;
+                         actions new_actions;
+
+">
 
           <div metal:use-macro="here/document_actions/macros/document_actions">
             Document actions (print, sendto etc)
