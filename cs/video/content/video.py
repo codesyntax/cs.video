@@ -19,6 +19,7 @@ VideoSchema = schemata.ATContentTypeSchema.copy() + atapi.Schema((
     atapi.TextField('url',
                     required=1,
                     searchable=0,
+                    languageIndependent=True,
                     storage=atapi.AnnotationStorage(),
                     widget=atapi.StringWidget(label=_(u'URL'),
                                               description=_(u'Paste here the URL fo the flash video'),
@@ -27,6 +28,7 @@ VideoSchema = schemata.ATContentTypeSchema.copy() + atapi.Schema((
 
     atapi.ImageField('image',
                      required=1,
+                     languageIndependent=True,
                      sizes= {'large'   : (768, 768),
                              'preview' : (400, 400),
                              'mini'    : (200, 200),
