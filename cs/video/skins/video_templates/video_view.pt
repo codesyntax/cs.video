@@ -8,59 +8,90 @@
 
   <body>
 
-    <metal:main fill-slot="main">
-      <tal:main-macro metal:define-macro="main">
-      
-        <div metal:use-macro="here/document_actions/macros/document_actions">
-          Document actions (print, sendto etc)
-        </div>
+    <metal:js fill-slot="javascript_head_slot">
+      <script type="text/javascript" 
+              tal:attributes="src string:$portal_url/flowplayer-3.1.4.min.js"></script>
 
+    </metal:js>
+
+
+    <metal:main fill-slot="main">
+      <tal:main-macro metal:define-macro="main"
+                      define="view here/@@ploneversionchecker">
+      
+        <tal:block condition="view/isPlone2">
+          <div metal:use-macro="here/document_actions/macros/document_actions">
+            Document actions (print, sendto etc)
+          </div>
+        </tal:block>
+        
+        <tal:block condition="view/isPlone3">
+          <div tal:replace="structure provider:plone.abovecontenttitle" />
+        </tal:block>
+        
         <h1 tal:content="context/Title" class="documentFirstHeading">Video Title</h1>
         
-        <div metal:use-macro="here/document_byline/macros/byline">
-          Get the byline - contains details about author and modification date.
-        </div>
-  
+        <tal:block condition="view/isPlone3">
+          <div tal:replace="structure provider:plone.belowcontenttitle" />
+        </tal:block>
+        
+        <tal:block condition="view/isPlone2">
+          <div metal:use-macro="here/document_byline/macros/byline">
+            Get the byline - contains details about author and modification date.
+          </div>
+        </tal:block>
+        
         <p class="documentDescription" tal:condition="here/Description"
            tal:content="here/Description">
           Document description
         </p>
 
+        <tal:block condition="view/isPlone3">
+              <div tal:replace="structure provider:plone.abovecontentbody" />
+        </tal:block>
+        
+
     <metal:player define-macro="player">
+
       <div tal:define="player player|string:player;
                        width width|python:400;
                        height height|python:320;">
-        <div id="player"
-             tal:attributes="id player">Loading...</div>
-        <script type="text/javascript"
-                tal:content="string: flashembed('${player}', 
-                                                {src:'/FlowPlayerDark.swf',
-                                                 width:${width},
-                                                 height:${height}
-                                                },
-                                                {config: {
-                                                         autoPlay: true,
-                                                         autoBuffering: false,
-                                                         playList: [{url: '${here/absolute_url}/image', 'type':'jpg'},
-                                                                    {url: '${here/getUrl}', overlayId: 'play'},
-                                                                    ],
-                                                         initialScale: 'scale',
-                                                         useNativeFullScreen: true
-                                                         }
-                                                 }
-                                               );
-                                               ">
-          Here goes the video player
-        </script>            
+        <a id="player"
+             tal:attributes="id player;
+                             style python:'display:block;;width:%spx;;height:%spx;;background-image: %s' % (width, height,'http://egoibarra.cs/argitalpenak/bideoak/goienanet-bla-bla-bla/image_preview' );
+                             href here/getUrl"></a>
+
+      <script type="text/javascript">
+        $f('player', 
+           '/flowplayer-3.1.5.swf',
+           { clip : {
+                      autoPlay: false,
+                      autoBuffering: true,
+                    },
+             playlist: [
+                         {url: 'http://www.biltegia.net/img/titularrak/10%20URTARRILA/Izenburuak%2013.flv'}
+                       ]
+           }
+          );
+      </script>
+
+
+
       </div>
+
     </metal:player>
 
         
         
-        <div metal:use-macro="here/document_relateditems/macros/relatedItems">
-        show related items if they exist
-        </div>
-
+    <div metal:use-macro="here/document_relateditems/macros/relatedItems">
+      show related items if they exist
+    </div>
+    
+    <tal:block condition="view/isPlone3">
+      <div tal:replace="structure provider:plone.belowcontentbody" />
+    </tal:block>
+    
+    
       </tal:main-macro>
     </metal:main>
   </body>
