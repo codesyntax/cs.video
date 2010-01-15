@@ -12,6 +12,13 @@
       permission="zope2.View"
       />
 
+    <browser:page
+        for="*"
+        name="ploneversionchecker"
+        class=".plone.PloneVersionChecker"
+        allowed_interface=".plone.IPloneVersionChecker"
+        permission="zope2.View"
+        />
 
 
 </configure>
