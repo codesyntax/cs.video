@@ -58,21 +58,17 @@
                        height height|python:320;">
         <a id="player"
              tal:attributes="id player;
-                             style python:'display:block;;width:%spx;;height:%spx;;background-image: %s' % (width, height,'http://egoibarra.cs/argitalpenak/bideoak/goienanet-bla-bla-bla/image_preview' );
-                             href here/getUrl"></a>
+                             style python:'display:block;;width:%spx;;height:%spx;;' % (width, height);
+                             href here/getUrl">
 
-      <script type="text/javascript">
-        $f('player', 
-           '/flowplayer-3.1.5.swf',
-           { clip : {
-                      autoPlay: false,
-                      autoBuffering: true,
-                    },
-             playlist: [
-                         {url: 'http://www.biltegia.net/img/titularrak/10%20URTARRILA/Izenburuak%2013.flv'}
-                       ]
-           }
-          );
+        </a>
+
+      <script type="text/javascript"
+              tal:content="string:
+        $$f('player', 
+           '${here/portal_url}/flowplayer-3.1.5.swf'
+          )
+;">
       </script>
 
 
