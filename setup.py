@@ -56,19 +56,14 @@ setup(name='cs.video',
       zip_safe=False,
       install_requires=['setuptools',
                         # -*- Extra requirements: -*-
-                        'Products.basesyndication',
-                        'Products.fatsyndication',
                         ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),
       test_suite = 'cs.video.tests.test_docs.test_suite',
       entry_points="""
-      # -*- entry_points -*- 
-      [distutils.setup_keywords]
-      paster_plugins = setuptools.dist:assert_string_list
-
-      [egg_info.writers]
-      paster_plugins.txt = setuptools.command.egg_info:write_arg
+      # -*- entry_points -*-      
+      [z3c.autoinclude.plugin]
+      target = plone
       """,
       paster_plugins = ["ZopeSkel"],
       )
