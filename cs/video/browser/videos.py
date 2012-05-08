@@ -7,7 +7,7 @@ from Products.CMFCore.utils import getToolByName
 class LastVideos(BrowserView):
 
     VIDEO_TYPES = ['Video']
-    FOLDER_TYPES = ['Large Plone Folder', 'Folder']
+    FOLDER_TYPES = ['Folder']
 
     def __call__(self):
         """
