@@ -11,7 +11,7 @@
           name="url_expr">string:${object_url}/@@videofolderize</property>
       <property name="link_target"></property>
       <property name="icon_expr"></property>
-      <property name="available_expr">object/@@videofolderness/notisVideoFolder</property>
+      <property name="available_expr">object/@@videofolderness/notisVideoFolder|nothing</property>
       <property name="permissions">
         <element value="Modify Portal Content"/>
       </property>
@@ -25,7 +25,7 @@
           name="url_expr">string:${object_url}/@@videofolderize?deactivate=1</property>
       <property name="link_target"></property>
       <property name="icon_expr"></property>
-      <property name="available_expr">object/@@videofolderness/isVideoFolder</property>
+      <property name="available_expr">object/@@videofolderness/isVideoFolder|nothing</property>
       <property name="permissions">
         <element value="Modify Portal Content"/>
       </property>
@@ -41,7 +41,7 @@
           name="url_expr">string:${object_url}/atom.xml</property>
       <property name="link_target"></property>
       <property name="icon_expr"></property>
-      <property name="available_expr">object/@@videofolderness/isVideoFolder</property>
+      <property name="available_expr">object/@@videofolderness/isVideoFolder|nothing</property>
       <property name="permissions">
         <element value="View"/>
       </property>
