@@ -1,7 +1,7 @@
 """Definition of the Video content type
 """
 
-from zope.interface import implements, directlyProvides
+from zope.interface import implements
 
 from Products.Archetypes import atapi
 from Products.ATContentTypes.content import base
@@ -9,7 +9,7 @@ from Products.ATContentTypes.content import schemata
 
 from cs.video import videoMessageFactory as _
 from cs.video.interfaces import IVideo
-from cs.video.config import PROJECTNAME, IS_PLONE3
+from cs.video.config import PROJECTNAME
 
 from Products.validation import V_REQUIRED
 
@@ -71,10 +71,9 @@ class Video(base.ATCTContent):
     portal_type = "Video"
     schema = VideoSchema
 
-    if IS_PLONE3:
-        title = atapi.ATFieldProperty('title')
-        description = atapi.ATFieldProperty('description')
-        url = atapi.ATFieldProperty('url')
+    title = atapi.ATFieldProperty('title')
+    description = atapi.ATFieldProperty('description')
+    url = atapi.ATFieldProperty('url')
 
     def tag(self, **kwargs):
         """Generate image tag using the api of the ImageField
