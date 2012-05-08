@@ -13,11 +13,6 @@
             interface="..interfaces.IVideo"
             />
 
-        <require
-            permission="cmf.ModifyPortalContent"
-            set_schema="..interfaces.IVideo"
-            />
-
     </class>
 
 </configure>
