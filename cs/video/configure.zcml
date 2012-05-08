@@ -23,13 +23,10 @@
     <include file="syndication.zcml" />
 
     <class
-        class="Products.ATContentTypes.content.folder.ATFolder">
+        class="plone.app.folder.folder.ATFolder">
       <implements interface=".interfaces.IPossibleVideoFolder" />
     </class>
-    <class
-        class="Products.ATContentTypes.content.folder.ATBTreeFolder">
-      <implements interface=".interfaces.IPossibleVideoFolder" />
-    </class>
+
 
 
 </configure>
