@@ -13,7 +13,6 @@
       permission="zope2.View"
       />
 
-
   <browser:page
       name="videofolderness"
       for="..interfaces.IPossibleVideoFolder"
@@ -29,24 +28,4 @@
       permission="cmf.ModifyPortalContent"
       />
   
-<!--
-  <browser:subMenuItem
-      submenu="plone_contentmenu_actions"
-      for="..interfaces.IPossibleVideoFolder"
-      title="Activate VideoFolderness"
-      action="${object_url}/@@videofolderize"
-      filter="object/@@videofolderness/notisVideoFolder"
-      permission="cmf.ModifyPortalContent"
-      />
-  
-  <browser:subMenuItem
-      submenu="plone_contentmenu_actions"
-      for="..interfaces.IPossibleVideoFolder"
-      title="Deactivate VideoFolderness"
-      action="${object_url}/@@videofolderize?deactivate=1"
-      filter="object/@@videofolderness/isVideoFolder"
-      permission="cmf.ModifyPortalContent"
-      />
- -->
-
 </configure>
