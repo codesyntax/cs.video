@@ -10,7 +10,7 @@
 
     <metal:js fill-slot="javascript_head_slot">
       <script type="text/javascript" 
-              tal:attributes="src string:$portal_url/flowplayer-3.1.4.min.js"></script>
+              tal:attributes="src string:$portal_url/flowplayer-3.2.9.min.js"></script>
 
     </metal:js>
 
@@ -33,7 +33,7 @@
           <script type="text/javascript"
                   tal:content="string:
                                $$f('player', 
-                               '${here/portal_url}/flowplayer-3.1.5.swf'
+                               '${here/portal_url}/flowplayer-3.2.10.swf'
                                )
                                ;">
           </script>
