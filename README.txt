@@ -9,6 +9,10 @@ It also provides to additional views for Folder and Large Folders to show curren
 
 We used a pre-cs.video version templates and objects to do this in http://goiena.net/bideoak and now we are using cs.video in http://www.dantzan.com
 
+In its template the video is shown using FlowPlayer, which is included and distributed with the product.
+
+A macro called player is defined in the video_view template to be able to reuse the player in other templates such as portlets
+
 
 - Code repository: http://code.codesyntax.com/private/cs.video
 - Questions and comments to mlarreategi@codesyntax.com

@@ -1,7 +1,15 @@
 Changelog
 =========
 
-1.0 (xxxx-xx-xx)
+2.0 (2012/10/17)
+-------------------
+
+ - Plone 4 version
+   [erral]
+
+
+1.x (LONG TIME AGO)
 ------------------
 
- - Created recipe with ZopeSkel [Mikel Larreategi].
+ - Old versions...
+   [erral]
