@@ -9,7 +9,7 @@ Changelog
 
 
 1.x (LONG TIME AGO)
-------------------
+--------------------
 
  - Old versions...
    [erral]

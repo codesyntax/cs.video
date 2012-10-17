@@ -1,7 +1,5 @@
-.. contents::
-
-cs.video
-=========
+Introduction
+=============
 
 cs.video provides a Video object to refere to externally hosted FLV files. It uses FlowPlayer to show the video in the Plone site.
 
