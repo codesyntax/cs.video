@@ -5,7 +5,7 @@ from zope.interface import implements
 
 from Products.fatsyndication.adapters import BaseFeed, BaseFeedSource, BaseFeedEntry
 
-from Products.basesyndication.interfaces import IFeed, IFeedSource, IFeedEntry, IEnclosure
+from Products.basesyndication.interfaces import IFeedSource, IFeedEntry, IEnclosure
 
 class VideoFeed(BaseFeed):
     """ Adapter for VideoFolder to IFeed """
