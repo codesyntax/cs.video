@@ -8,18 +8,8 @@
 
   <body>
 
-    <metal:js fill-slot="javascript_head_slot">
-      <script type="text/javascript" 
-              tal:attributes="src string:$portal_url/flowplayer-3.2.9.min.js"></script>
-
-    </metal:js>
-
-
-    <metal:main fill-slot="content-core">
-      
-      
+    <metal:main fill-slot="content-core">    
       <metal:player define-macro="player">
-
         <div tal:define="player player|string:player;
                          width width|python:400;
                          height height|python:320;">
@@ -32,19 +22,17 @@
 
           <script type="text/javascript"
                   tal:content="string:
-                               $$f('player', 
-                               '${here/portal_url}/flowplayer-3.2.10.swf'
+                               flowplayer('${player}', 
+                                          '${here/portal_url}/flowplayer-3.2.12.swf',
+                                          {key: '#$8e9d24e74d33165ff4d',
+                                           clip: {autoPlay: false, 
+                                                  autoBuffering: true},
+                                          }  
                                )
                                ;">
           </script>
-
-
-
         </div>
-
       </metal:player>
-
-      
     </metal:main>
   </body>
 </html>
