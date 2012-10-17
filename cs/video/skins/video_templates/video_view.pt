@@ -23,7 +23,7 @@
           <script type="text/javascript"
                   tal:content="string:
                                flowplayer('${player}', 
-                                          '${here/portal_url}/flowplayer-3.2.12.swf',
+                                          '${here/portal_url}/flowplayer-3.2.10.swf',
                                           {key: '#$8e9d24e74d33165ff4d',
                                            clip: {autoPlay: false, 
                                                   autoBuffering: true},
