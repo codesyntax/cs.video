@@ -2,10 +2,7 @@
 <object name="portal_javascripts">
 
  <javascript cacheable="True" compression="safe" cookable="True"
-             enabled="True" expression="" id="flashembed.min.js" inline="False"/>
-
- <javascript cacheable="True" compression="safe" cookable="True"
-             enabled="True" expression="" id="flowplayer-3.2.9.min.js" inline="False"/>
+             enabled="True" expression="" id="flowplayer-3.2.11.min.js" inline="False"/>
 
 
 </object>
