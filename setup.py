@@ -8,7 +8,7 @@ from setuptools import setup, find_packages
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
-version = '2.1'
+version = '3.1'
 
 long_description = (
     read('README.txt')
@@ -45,8 +45,8 @@ setup(name='cs.video',
       extras_require=dict(tests=tests_require),
       test_suite = 'cs.video.tests.test_docs.test_suite',
       entry_points="""
-      # -*- entry_points -*-      
+      # -*- entry_points -*-
       [z3c.autoinclude.plugin]
       target = plone
-      """,      
+      """,
       )
