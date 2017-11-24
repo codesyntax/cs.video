@@ -7,7 +7,7 @@ try:
     from Products.LinguaPlone import public as atapi
 except ImportError:
     from Products.Archetypes import atapi
-    
+
 from Products.ATContentTypes.content import base
 from Products.ATContentTypes.content import schemata
 
@@ -38,7 +38,17 @@ VideoSchema = schemata.ATContentTypeSchema.copy() + atapi.Schema((
                                                   description=_(u'Select if this video is in 16:9 format instead on 4:3'),
                                                   ),
                        ),
-    
+
+    atapi.IntegerField('duration',
+        required=0,
+        searchable=0,
+        default=False,
+        widget=atapi.BooleanWidget(
+            label=_(u'Duration'),
+            description=_(u'Enter the duration in seconds'),
+        ),
+    ),
+
 
     atapi.ImageField('image',
                      required=1,
