@@ -20,9 +20,6 @@
 
     <!-- -*- extra stuff goes here -*- -->
 
-    <!-- VideoFolder stuff -->
-    <include file="syndication.zcml" zcml:condition="installed Products.basesyndication"/>
-
     <class
         class="plone.app.folder.folder.ATFolder">
       <implements interface=".interfaces.IPossibleVideoFolder" />
