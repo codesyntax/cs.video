@@ -21,23 +21,26 @@ VideoSchema = schemata.ATContentTypeSchema.copy() + atapi.Schema((
 
     # -*- Your Archetypes field definitions here ... -*-
     atapi.TextField('url',
-                    required=1,
-                    searchable=0,
-                    languageIndependent=True,
-                    storage=atapi.AnnotationStorage(),
-                    widget=atapi.StringWidget(label=_(u'URL'),
-                                              description=_(u'Paste here the URL fo the flash video'),
-                                              ),
-                    ),
+        required=1,
+        searchable=0,
+        languageIndependent=True,
+        storage=atapi.AnnotationStorage(),
+        widget=atapi.StringWidget(
+            label=_(u'URL'),
+            description=_(u'Paste here the URL fo the flash video'),
+        ),
+    ),
 
-    atapi.BooleanField('panoramic',
-                       required=0,
-                       searchable=0,
-                       default=False,
-                       widget=atapi.BooleanWidget(label=_(u'Is panoramic?'),
-                                                  description=_(u'Select if this video is in 16:9 format instead on 4:3'),
-                                                  ),
-                       ),
+    atapi.BooleanField(
+        'panoramic',
+        required=0,
+        searchable=0,
+        default=False,
+        widget=atapi.BooleanWidget(
+            label=_(u'Is panoramic?'),
+            description=_(u'Select if this video is in 16:9 format instead on 4:3'),
+        ),
+    ),
 
     atapi.IntegerField('duration',
         required=0,
@@ -51,21 +54,22 @@ VideoSchema = schemata.ATContentTypeSchema.copy() + atapi.Schema((
 
 
     atapi.ImageField('image',
-                     required=1,
-                     languageIndependent=True,
-                     sizes= {'large'   : (768, 768),
-                             'preview' : (400, 400),
-                             'mini'    : (200, 200),
-                             'thumb'   : (128, 128),
-                             'tile'    :  (64, 64),
-                             'icon'    :  (32, 32),
-                             'listing' :  (16, 16),
-                             },
-                     widget=atapi.ImageWidget(label=_(u'Image'),
-                                              validators = (('isNonEmptyFile', V_REQUIRED),),
-                                              ),
-                     ),
-
+        required=1,
+        languageIndependent=True,
+        sizes={
+            'large'   : (768, 768),
+            'preview' : (400, 400),
+            'mini'    : (200, 200),
+            'thumb'   : (128, 128),
+            'tile'    :  (64, 64),
+            'icon'    :  (32, 32),
+            'listing' :  (16, 16),
+        },
+        widget=atapi.ImageWidget(
+            label=_(u'Image'),
+            validators = (('isNonEmptyFile', V_REQUIRED),),
+        ),
+    ),
 
 
 ))
