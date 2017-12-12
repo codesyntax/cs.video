@@ -46,7 +46,7 @@ VideoSchema = schemata.ATContentTypeSchema.copy() + atapi.Schema((
         required=0,
         searchable=0,
         default=False,
-        widget=atapi.BooleanWidget(
+        widget=atapi.IntegerWidget(
             label=_(u'Duration'),
             description=_(u'Enter the duration in seconds'),
         ),
