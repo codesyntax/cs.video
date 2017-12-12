@@ -4,7 +4,12 @@ Changelog
 3.0.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- this should use an IntegerWidget [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+-  [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+- [ci skip] [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
 
 
 3.0.3 (2017-11-24)
