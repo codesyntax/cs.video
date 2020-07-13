@@ -35,7 +35,7 @@ VideoSchema = schemata.ATContentTypeSchema.copy() + atapi.Schema(
             "panoramic",
             required=0,
             searchable=0,
-            default=False,
+            default=True,
             widget=atapi.BooleanWidget(
                 label=_(u"Is panoramic?"),
                 description=_(u"Select if this video is in 16:9 format instead on 4:3"),
