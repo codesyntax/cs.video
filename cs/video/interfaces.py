@@ -19,4 +19,3 @@ class IVideoFolderEnableness(Interface):
 
 class IPossibleVideoFolder(Interface):
     """ Marker interface for possible video folders """
-

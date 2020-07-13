@@ -8,17 +8,18 @@ from Products.Five import zcml
 from Products.Five import fiveconfigure
 from Products.PloneTestCase import PloneTestCase as ptc
 from Products.PloneTestCase.layer import PloneSite
+
 ptc.setupPloneSite()
 
 import cs.video
+
 
 class TestCase(ptc.PloneTestCase):
     class layer(PloneSite):
         @classmethod
         def setUp(cls):
             fiveconfigure.debug_mode = True
-            zcml.load_config('configure.zcml',
-                             cs.video)
+            zcml.load_config("configure.zcml", cs.video)
             fiveconfigure.debug_mode = False
 
         @classmethod
@@ -27,28 +28,25 @@ class TestCase(ptc.PloneTestCase):
 
 
 def test_suite():
-    return unittest.TestSuite([
+    return unittest.TestSuite(
+        [
+            # Unit tests
+            # doctestunit.DocFileSuite(
+            #    'README.txt', package='cs.video',
+            #    setUp=testing.setUp, tearDown=testing.tearDown),
+            # doctestunit.DocTestSuite(
+            #    module='cs.video.mymodule',
+            #    setUp=testing.setUp, tearDown=testing.tearDown),
+            # Integration tests that use PloneTestCase
+            # ztc.ZopeDocFileSuite(
+            #    'README.txt', package='cs.video',
+            #    test_class=TestCase),
+            # ztc.FunctionalDocFileSuite(
+            #    'browser.txt', package='cs.video',
+            #    test_class=TestCase),
+        ]
+    )
 
-        # Unit tests
-        #doctestunit.DocFileSuite(
-        #    'README.txt', package='cs.video',
-        #    setUp=testing.setUp, tearDown=testing.tearDown),
 
-        #doctestunit.DocTestSuite(
-        #    module='cs.video.mymodule',
-        #    setUp=testing.setUp, tearDown=testing.tearDown),
-
-
-        # Integration tests that use PloneTestCase
-        #ztc.ZopeDocFileSuite(
-        #    'README.txt', package='cs.video',
-        #    test_class=TestCase),
-
-        #ztc.FunctionalDocFileSuite(
-        #    'browser.txt', package='cs.video',
-        #    test_class=TestCase),
-
-        ])
-
-if __name__ == '__main__':
-    unittest.main(defaultTest='test_suite')
+if __name__ == "__main__":
+    unittest.main(defaultTest="test_suite")
